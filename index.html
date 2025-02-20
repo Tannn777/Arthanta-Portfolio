@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Arthanta</title>
+    <link rel="Icon" type="jpg"
+    href="icon.jpg">>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #fff;
+    background: #081b29;
+    margin: 0;
+    padding: 0;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav {
+  background-color: rgba(4, 4, 5, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center   ;
+  padding: 1.5rem 3rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;    
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin-right: auto;
+}
+
+.logo {
+    font-family: "Segoe UI", sans-serif; 
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    margin-right: auto;
+}
+
+nav a:hover{
+  color: #0ef;
+  border-bottom: 3px solid #0ef;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 8px 0;
+  transition: all;
+  transition-duration: 300ms;
+  border-bottom: 1px solid rgba(255, 68, 0, 0);
+  opacity: 0;
+  animation: slideTop 0.5s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+nav ul li a:hover {
+  color: #0ef;
+  border-bottom: 5px solid #0ef;
+}
+
+.menu-icon {
+  font-size: 28px;
+  display: none;
+}
+
+.menu-icon:hover{
+    color: #0ef;
+    border-bottom: 3px solid #0ef;
+}
+
+main {
+  padding-top: 7rem;
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul li:last-of-type {
+    padding-bottom: 8px;
+  }
+
+  nav ul.hidden {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+    align-items: center;
+  }
+
+  main {
+    padding-top: 8rem;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  nav {
+    justify-content: center;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+}
+
+
+
+.home {
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.home-content {
+    text-align: center;
+    width: 100%;
+}
+
+.home-content h3 {
+    font-size: 28px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 0.7s;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 20px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 0.7s;
+}
+
+.home-content h3 span {
+    color: #0ef;
+}
+
+.home-content h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p {
+    font-size: 18px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+    margin-bottom: 60px;
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 20px 10px;
+    transition: 0.5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+}
+
+.home-sci a:hover {
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+
+@media (max-width: 576px) {
+    .home-content h3 {
+        font-size: 20px;
+    }
+
+    .home-content h1 {
+        font-size: 28px;
+    }
+
+    .home-content p {
+        font-size: 14px;
+        margin-bottom: 40px;
+    }
+
+    .home-sci a {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        margin: 10px 8px;
+    }
+}
+
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.about-box {
+  background-color: #162447;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 1px 1px 20px #012290f7, 1px 1px 40px #f3f3f3f7;
+}
+.about-box:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.image-container {
+  flex: 1;
+  text-align: center;
+}
+
+.profile-image {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 4px solid #1f4068;
+}
+
+.about-text {
+  flex: 2;
+  text-align: left;
+}
+
+.about-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.about-text .highlight {
+  color: #00d1ff;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #cbd5e1;
+}
+
+.about-button {
+  background: linear-gradient(45deg, #00d1ff, #1f4068);
+  border: none;
+  border-radius: 12px;
+  padding: 17px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 0.7s;
+}
+
+.about-button:hover {
+  background: linear-gradient(45deg, #1f4068, #00d1ff);
+  transform: translateY(-3px);
+  box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan,
+        0 0 200px cyan;
+}
+
+.about-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 768px) {
+  .about-box {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about-text h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .about-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .about-button {
+    font-size: 0.9rem;
+  }
+}
+
+#services {
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 50px 0;
+}
+
+h1.sub-title {
+    font-size: 40px;
+    color: #ffffff;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.sub-title span {
+    color: #0ef;
+}
+
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(280px, 1fr));
+    gap: 25px;
+    width: 85%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+.service-box {
+    position: relative;
+    background-color: #1e293b;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2), 0 8px 10px rgba(0, 0, 0, 0.1);
+}   
+
+.service-box:active {
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
+}
+
+.service-box:active::before {
+    opacity: 0;
+}  
+
+
+.service-box::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    background: linear-gradient(45deg, #06b6d4, #3b82f6);
+    z-index: -1;
+    opacity: 0;
+    border-radius: 12px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.service-box:hover::before {
+    opacity: 1;
+}
+
+.service-box:active::before {
+    opacity: 0;
+}
+
+.service-icon {
+    font-size: 40px;
+    color: #0ef;
+    margin-bottom: 15px;
+}
+
+.service-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.service-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 90%;
+        margin-bottom: 80px;
+    }
+    h1.sub-title {
+    font-size: 30px;
+   
+}
+}
+
+@media (max-width: 480px) {
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        width: 90%;
+        margin-bottom: 100px
+    }
+
+    .service-box {
+        padding: 15px;
+    }
+
+    .service-title {
+        font-size: 20px;
+    }
+
+
+}   
+
+
+.read {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+}
+
+.read:hover {
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan,
+        0 0 200px cyan;
+}
+
+.services-list div:hover {
+    transform: translateY(-10px);
+}
+
+.sub-title1 {
+    text-align: center;
+    font-size: 40px;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+.sub-title1 span {
+    color: #0ef;
+}
+
+
+.container1 {
+    width: 600px;
+    height: 800px;
+    padding: 75px 90px;
+    margin: auto;
+    background: #081b29;
+    border-radius: 20px;
+    transition: background 0.5s, transform 0.5s;
+    box-shadow: 1px 1px 20px #012290f7, 1px 1px 40px #06bd3df7;
+    justify-content: center;
+    margin-bottom: 100px;
+    
+}
+
+.heading1 {
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
+    margin-bottom: 50px;
+    color: #0ef;
+        
+}
+
+
+.bar {
+    font-size: 23px;
+}
+
+.Technical-bars .bar {
+    margin: 40px 0;
+}
+
+.Technical-bars .bar:first-child {
+    margin-top: 0;
+}
+
+.Technical-bars .bar:last-child {
+    margin-bottom: 0;
+}
+
+.Technical-bars .bar .info {
+    margin-bottom: 5px;
+}
+
+.Technical-bars .bar .info span {
+    font-size: 20px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+}
+
+.Technical-bars .bar .progress-line {
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    height: 5px;
+    background-color: #000;
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.Technical-bars .bar .progress-line span {
+    height: 100%;
+    background-color: #0ef;
+    position: absolute;
+    border-radius: 10px;
+    animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.progress-line.html span {
+    width: 90%;
+}
+
+.progress-line.css span {
+    width: 85%;
+}
+
+.progress-line.javascript span {
+    width: 60%;
+}
+
+.progress-line.python span {
+    width: 65%;
+}
+
+.progress-line.sql span {
+    width: 75%;
+}
+
+.progress-line span::after {
+    position: absolute;
+    padding: 1px 8px;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    top: -28px;
+    right: -20px;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+
+.progress-line.html span::after {
+    content: "90%";
+}
+
+.progress-line.css span::after {
+    content: "85%";
+}
+
+.progress-line.javascript span::after {
+    content: "60%";
+}
+
+.progress-line.python span::after {
+    content: "65%";
+}
+
+.progress-line.sql span::after {
+    content: "75%";
+} 
+
+.progress-line span::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #000;
+    top: -10px;
+    right: 0;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+
+@keyframes showText {
+    100% {
+        opacity: 1;
+    }
+}
+
+.radial-bars {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.radial-bars .radial-bar {
+    width: 50%;
+    height: 170px;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.radial-bars .radial-bar svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 120px;
+    height: 160px;
+}
+
+.radial-bars .radial-bar .progress-bar {
+    stroke-width: 10;
+    stroke: black;
+    fill: transparent;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+    animation: animate-bar 1s linear forwards;
+}
+
+@keyframes animate-bar {
+    100% {
+        stroke-dashoffset: -1;
+    }
+}
+
+.path {
+    stroke-width: 10;
+    stroke: #0ef;
+    fill: transparent;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+}
+
+.path-1 {
+    animation: animate-path1 1s 1s linear forwards;
+}
+
+.path-2 {
+    animation: animate-path2 1s 1s linear forwards;
+}
+
+.path-3 {
+    animation: animate-path3 1s 1s linear forwards;
+}
+
+.path-4 {
+    animation: animate-path4 1s 1s linear forwards;
+}
+
+@keyframes animate-path1 {
+    100% {
+        stroke-dashoffset: 50;
+    }
+}
+
+@keyframes animate-path2 {
+    100% {
+        stroke-dashoffset: 175;
+    }
+}
+
+@keyframes animate-path3 {
+    100% {
+        stroke-dashoffset: 125;
+    }
+}
+
+@keyframes animate-path4 {
+    100% {
+        stroke-dashoffset: 75;
+    }
+}
+
+.radial-bar .percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+}
+
+.radial-bar .text {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+}
+
+@media (max-width: 768px) {
+    .container1 {
+        width: 80%;
+        padding: 40px;
+        margin: 15px auto;
+        margin-bottom: 100px;
+    }
+
+    .sub-title1 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .heading1 {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    .Technical-bars .bar {
+        margin: 15px 0;
+        margin-bottom: 70px;
+    }
+
+    .Technical-bars .bar .info span {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .bar {
+        font-size: 18px;
+    }
+
+    .progress-line {
+        height: 3px;
+    }
+
+    .progress-line span::after {
+        font-size: 9px;
+        top: -18px;
+        right: -10px;
+    }
+
+    .radial-bars .radial-bar {
+        width: 100%;
+        height: 120px;
+        margin-bottom: 40px;
+    }
+
+    .radial-bars .radial-bar svg {
+        width: 90px;
+        height: 120px;
+    }
+
+    .radial-bar .percentage {
+        font-size: 13px;
+    }
+
+    .radial-bar .text {
+        font-size: 15px;
+        font-weight: bold;
+    }
+}
+
+        .skills-section {
+            margin-top: 100px;
+            text-align: center;
+            padding: 100px;
+           
+            
+        }
+        .swiper {
+            width: 80%;
+            margin: auto;
+        }
+        .swiper-slide img {
+            margin-top: 100px;
+            width: 120px;
+            height: auto;
+        }
+        
+
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 20px;
+        margin-top: 30px;
+    }
+    .swiper {
+        width: 90%;
+    }
+    .swiper-slide img {
+        width: 90px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-section {
+        padding: 15px;
+        margin-top: 20px;
+    }
+    .swiper {
+        width: 100%;
+        padding: 5px 0;
+    }
+    .swiper-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .swiper-slide {
+        flex: 0 0 25%; 
+        display: flex;
+        justify-content: center;
+    }
+    .swiper-slide img {
+        width: 60px;
+        margin-top: 40px;
+    }
+}
+
+
+
+
+.main-text {
+    padding-top: 130px;
+}
+.main-text h2 {
+    font-size: 40px;
+    line-height: 1;
+    text-align: center;
+}
+
+.main-text h2 span {
+    color: #0ef;
+}
+
+        .portfolio-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+            padding: 70px;
+            justify-items: center;
+        }
+        
+        .project-box {
+            position: relative;
+            background: #162447;
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 1px 1px 20px #012290f7, 1px 1px 10px #f3f3f3f7;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            margin-bottom: 50px;
+        }
+        
+        .project-box img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .project-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .project-box h5 {
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        .project-box p {
+            font-size: 14px;
+            color: #cbd5e1;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        .zoom-effect {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            transition: all 0.3s ease-in-out;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 50%;
+            opacity: 0;
+        }
+        
+        .project-box:hover .zoom-effect {
+            transform: translate(-50%, -50%) scale(1.2);
+            opacity: 1;
+        }
+        
+        .zoom-effect i {
+            color: #fff;
+            font-size: 24px;
+        }
+        
+        @media (max-width: 768px) {
+    .portfolio-content {
+        padding: 30px;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .project-box {
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+
+    .zoom-effect {
+        top: 40%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-text h2 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .portfolio-content {
+        padding: 20px;
+    }
+
+    .project-box {
+        padding: 20px;
+    }
+}
+
+        
+
+
+
+.contact {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 3rem;
+    padding-left: 55px;
+    margin-top: 200px;
+    margin-bottom: 80px;
+}
+
+.contact-text h2 {
+    font-size: 40px;
+    line-height: 1;
+    text-align: left;
+    margin-bottom:  0px;
+}
+
+.contact-text h2 span {
+    color: #0ef;
+}
+
+.contact-text h4 {
+    margin: 15px 0;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contact-text p {
+    color: #cbd5e1;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 2rem;
+}
+
+.contact-list {
+    margin-bottom: 3rem;
+}
+
+.contact-list li {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.contact-list i {
+    display: inline-block;
+    color: #0ef;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+.contact-list li a:hover {
+    transform: scale(1.01) translateY(-5px);
+    color: aqua;
+}
+
+.contact-icons i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: 0.5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+}
+
+.contact-icons i:hover {
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.contact-form form {
+    position: relative;
+}
+
+.contact-form form input,
+form textarea {
+    border: none;
+    outline: none;
+    width: 90%;
+    padding: 18px;
+    background: #ffffff;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 220px;
+}
+
+.contact-form form .send {
+    display: inline-block;
+    padding: 14px 60px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 18px;
+    color: #081b29;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-top: 30px;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+}
+
+.contact-form form .send:hover {
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan,
+        0 0 200px cyan;
+}
+
+.last-text p {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: rgb(7, 85, 91);
+    font-weight: 300;
+    margin-top: 70px;
+}
+
+.top {
+    position: fixed;
+    bottom: 2.1rem;
+    right: 2rem;
+}
+
+.top i {
+    color: #000000;
+    background: #0ef;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+
+@media (max-width: 576px) {
+    .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-left: 15px;
+        margin-top: 150px;
+        margin-bottom: 20px;
+    }
+
+    .contact-text h2 {
+        font-size: 40 px;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .contact-text h4 {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-text p {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 18px;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .contact-form form .send {
+        padding: 10px 30px;
+        font-size: 14px;
+        margin-top: 1rem;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .last-text p {
+        font-size: 12px;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .contact-form form input,
+    .contact-form form textarea {
+        width: 95%;
+        max-width: 95%;
+        box-sizing: border-box;
+        margin-bottom: 1rem;
+    }
+
+    .contact-form form textarea {
+        resize: vertical;
+    }
+}
+
+
+
+@font-face {
+    font-family: "Briston.ttf";
+    src: url(Briston.ttf);
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+
+    </style>
+
+</head>
+
+<body>
+        <nav>
+            <a href="#home" class="logo">Arthanta</a>
+            <div id="menu-icon" class="menu-icon">
+              <i class="ph-fill ph-list"></i>
+            </div>
+            <ul id="menu-list" class="hidden">
+              <li>
+                <a href="#home">Home</a>
+              </li>
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#services">Services</a>
+              </li>
+              <li>
+                <a href="#skills">Skills</a>
+              </li>
+              <li>
+                <a href="#project">Project</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1 style="font-family: 'Briston.ttf';">ARTHANTA ZACHRO HELMIANO</h1>
+            <h3>And I'm a <span class="text"> </span></h3>
+            <a href="#about" class="about-button">More About Me</a>
+        </div>
+        <span class="home-imgHover"></span>
+    </section>
+
+    <section class="about-container" id="about">
+        <div class="about-container">
+            <div class="about-box" data-aos="fade-up" data-aos-duration="1000"  >
+              <img src="profile.png" alt="Profile Picture" class="profile-image">
+              <div class="about-text">
+                <h1><span class="highlight">About </span>Me</h1>
+                <h2>Full Stack Developer!</h2>
+                <p>
+                    Hello, I’m Arthanta! A dedicated Web Developer passionate about creating responsive and innovative websites. I specialize in both front-end and back-end development, working with technologies like HTML, CSS, JavaScript, React, and Node.js. I thrive in collaborative environments and always welcome new challenges. Explore my portfolio to see my work!
+                </p>
+                <a href="Cv Arthanta Zachro Helmiano.pdf" class="about-button">Open My CV</a>
+              </div>
+            </div>
+          </div>
+    </section>
+
+
+    <section>
+        <div class="services" id="services">
+            <h1 class="sub-title" data-aos="fade-up" data-aos-duration="1000">My <span>Services</span></h1>
+    <div class="services-container">
+        <div class="service-box" data-aos="fade-up" data-aos-duration="1000">
+            <div class="service-icon">💻</div>
+            <div class="service-title">Web Design</div>
+            <div class="service-description">
+                As a professional web designer, I offer innovative and responsive design solutions to ensure your website is not only visually appealing but also functional.
+            </div>
+        </div>
+        <div class="service-box"data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <div class="service-icon">&#x3C;&#x2F;&#x3E;</div>
+            <div class="service-title">Web Development</div>
+            <div class="service-description">
+                I develop fast, secure, and accessible websites across various devices, utilizing the latest technologies and industry best practices.
+            </div>
+        </div>
+        <div class="service-box" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            <div class="service-icon">✏️</div>
+            <div class="service-title">UI/UX Design</div>
+            <div class="service-description">
+                I prioritize user experience with intuitive and user-friendly interface designs, creating experiences that enhance user interaction and support your business goals.
+            </div>
+        </div>
+        <div class="service-box" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+            <div class="service-icon">🛠️</div>
+            <div class="service-title">Back-End Development</div>
+            <div class="service-description">
+                I specialize in managing and processing data efficiently using PHP and MySQL. Ensuring smooth data flow and secure database management with PHPMyAdmin.
+            </div>
+        </div>
+    </div>
+            </div>
+    </section>
+
+
+    
+
+    <section>
+        <h1 class="sub-title1" id="skills" data-aos="fade-up" data-aos-duration="1000">My <span>Skills</span></h1>
+        <div class="container1" data-aos="fade-right" data-aos-duration="1000">
+            <h1 class="heading1">Technical Skills</h1>
+            <div class="Technical-bars">
+                <div class="bar"><i style="color:#c95d2e" class="bx bxl-html5"></i>
+                    <div class="info">
+                        <span>HTML</span>
+                    </div>
+                    <div class="progress-line html">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i style="color:#147bbc" class="bx bxl-css3"></i>
+                    <div class="info">
+                        <span>CSS</span>
+                    </div>
+                    <div class="progress-line css">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i style="color:#b0bc1e" class="bx bxl-javascript"></i>
+                    <div class="info">
+                        <span>Javascript</span>
+                    </div>
+                    <div class="progress-line javascript">
+                        <span></span>
+                    </div>
+                </div> 
+                <div class="bar"><i style="color:#c32ec9" class='bx bxl-python'></i>
+                    <div class="info">
+                        <span>Python</span>
+                    </div>
+                    <div class="progress-line python">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i style="color: #ff9900;" class="fa-solid fa-database"></i>
+                    <div class="info">
+                        <span>SQL</span>
+                    </div>
+                    <div class="progress-line sql">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container1" data-aos="fade-left" data-aos-duration="1000">
+            <h1 class="heading1">My Software</h1>
+            <div class="radial-bars">
+
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-1" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">90%</div>
+                    <div class="text"><i style="color:#147bbc" class='bx bxl-visual-studio'></i> Visual Studio Code</div>
+                </div>
+
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-2" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">65%</div>
+                    <div class="text"><i style="color: #147bbc;" class='fa-brands fa-neos' ></i> Nicepage</div>
+                </div>
+
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-3" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">75%</div>
+                    <div class="text"><i style="color: #ff9900;" class="bx bxl-php"></i> PHP MySQL</div>
+                </div>
+
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-4" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">85%</div>
+                    <div class="text"><i style="color:  rgb(190, 0, 63);" class='bx bxl-figma' ></i> Figma</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="skills-section">
+            <h1 class="sub-title1" id="skills" data-aos="fade-up" data-aos-duration="1000">Key <span>Skills</span></h1>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" data-aos="zoom-in" data-aos-duration="1000"><img src="skl1_html.png" alt="Skill 1"></div>
+                    <div class="swiper-slide"data-aos="zoom-in" data-aos-duration="1000"><img src="skl2_css.png" alt="Skill 2"></div>
+                    <div class="swiper-slide"data-aos="zoom-in" data-aos-duration="1000"><img src="skl3_js.png" alt="Skill 3"></div>
+                    <div class="swiper-slide"data-aos="zoom-in" data-aos-duration="1000"><img src="skl4_figma.png" alt="Skill 4"></div>
+                    <div class="swiper-slide"data-aos="zoom-in" data-aos-duration="1000"><img src="skl5_sql.png" alt="Skill 5"></div>
+                    <div class="swiper-slide"data-aos="zoom-in" data-aos-duration="1000"><img src="skl6_php.png" alt="Skill 6"></div>
+                    <div class="swiper-slide"data-aos="zoom-in" data-aos-duration="1000"><img src="skl7_java.png" alt="Skill 7"></div>
+                    <div class="swiper-slide"data-aos="zoom-in" data-aos-duration="1000"><img src="skl8_adobe.png" alt="Skill 8"></div>
+                    <div class="swiper-slide"data-aos="zoom-in" data-aos-duration="1000"><img src="skl9_canva.png" alt="Skill 9"></div>
+                    <div class="swiper-slide"data-aos="zoom-in" data-aos-duration="1000"><img src="skl10_nicepage.png" alt="Skill 10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 5,
+        spaceBetween: 10,
+        loop: true,
+        autoplay: {
+            delay: 800,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 5,
+            },
+            768: {
+                slidesPerView: 4,
+            },
+            480: {
+                slidesPerView: 4,
+            }
+        }
+    });
+</script>
+
+
+
+    <section>
+        <div id="portfolio" id="project">
+            <div class="main-text" id="project">
+                <h2 data-aos="fade-up" data-aos-duration="1000">Latest <span>Project</span></h2>
+                <div class="portfolio-content">
+                    <div class="project-box" data-aos="zoom-in" data-aos-duration="1000">
+                        <img src="lumbungcerita.png">
+                        <a href="lumbungcerita.png" class="zoom-effect"><i class='bx bx-link-external'></i></a>
+                        <h5>Website E-Perpus</h5>
+                        <p>Lumbung Cerita is a digital library for searching, reading, and easily downloading books online.</p>
+                    </div>
+                    <div class="project-box" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                        <img src="BuyNexa.png">
+                        <a href="BuyNexa.pdf" class="zoom-effect"><i class='bx bx-link-external'></i></a>
+                        <h5>BuyNexa</h5>
+                        <p>Buynexa is an e-commerce prototype simulating online buying and selling transactions with complete features.</p>
+                    </div>
+                    <div class="project-box" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+                        <img src="justifier.png">
+                        <a href="https://justifier.nicepage.io/" class="zoom-effect"><i class='bx bx-link-external'></i></a>
+                        <h5>Website Justifier</h5>
+                        <p>Justifier is a website providing web development and creation services for various business needs.</p>
+                    </div>
+                    <div class="project-box" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
+                        <img src="rstabahraya.png">
+                        <a href="RS Tabah Raya.pdf" class="zoom-effect"><i class='bx bx-link-external'></i></a>
+                        <h5>RS Tabah Raya</h5>
+                        <p>RS Tabahraya is a hospital application prototype that simplifies healthcare services digitally and efficiently.</p>
+                    </div>
+                    <div class="project-box" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="800">
+                        <img src="ufogame.png">
+                        <a href="ufogame.png" class="zoom-effect"><i class='bx bx-link-external'></i></a>
+                        <h5>Game Ufo</h5>
+                        <p>Game UFO is a game where players collect points before time runs out with exciting challenges.</p>
+                    </div>
+                    <div class="project-box" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+                        <img src="panganova.png">
+                        <a href="panganova.png" class="zoom-effect"><i class='bx bx-link-external'></i></a>
+                        <h5>Website Panganova</h5>
+                        <p>Panganova is a website discussing Indonesian food, food security, innovation, and sustainable food education.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="main-text">
+            <h2 data-aos="fade-up" data-aos-duration="1000">My <span>Certificates</span></h2>
+            <div class="portfolio-content">
+                <div class="project-box" data-aos="zoom-in" data-aos-duration="1000">
+                    <img src="sertifikat1.jpg">
+                    <a href="sertifikat1.jpg" class="zoom-effect"><i class='bx bx-link-external'></i></a>
+                    <h5>Silat Certificate</h5>
+                    <p>INTERNATIONAL Silat Certificate, 1st Place in the "PAKUBUMI OPEN INDONESIA" Event</p>
+                </div>
+                <div class="project-box" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                    <img src="sertifikat2.png">
+                    <a href="sertifikat2.png" class="zoom-effect"><i class='bx bx-link-external'></i></a>
+                    <h5>Silat Certificate</h5>
+                    <p>DKI JAKARTA Silat Certificate, 1st Place in the "PIMDA 50 CUP" Event</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-text" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Contact <span>Me</span></h2>
+            <h4>Let's Work Together</h4>
+            <p>Hello! Thank you for visiting my website. If you have any questions, feedback, or would like to collaborate, feel free to contact me. I would be happy to hear from you!</p>
+            <div class="contact-list">
+                <li><i class='bx bxs-send'></i> arthantazachrohelmiano@gmail.com</a></li>
+                <li><i class='bx bx-phone-call'></i> 08872370233</a></li>
+            </div>
+            <div class="contact-icons">
+                <a href="https://web.facebook.com/arthanta.helmiano"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="https://www.instagram.com/tannnn.zh/"><i class='bx bxl-instagram'></i></a>
+                <a href="https://tiktok.com/@apocalypse.to_cry?lang=en"><i class='bx bxl-tiktok'></i></a>
+
+            </div>
+        </div>
+        <div class="contact-form" data-aos="fade-up" data-aos-duration="1000">
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+                <input type="hidden" name="access_key" value="eb6fcbc9-b48f-4341-9bab-0b6d7cba26b3">
+            
+                <input type="text" placeholder="Enter Your Name" name="name" required>
+                <input type="email" placeholder="Enter Your Email" name="email" required>
+                <textarea name="message" placeholder="Enter Your Massage" required></textarea>
+            
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            
+                <button class="send" type="submit">Submit Form</button>
+            
+            </form>
+        </div>
+    </section>
+
+    
+
+    
+
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const menuList = document.getElementById("menu-list");
+
+        menuIcon.addEventListener("click", () => {
+        menuList.classList.toggle("hidden");
+    });
+    </script> 
+
+
+    <script src="script.js"></script>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+
+
+
+</body>
+
+</html>
